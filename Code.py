@@ -29,11 +29,6 @@ from sklearn import svm
 
 def tied_rank(x):
     """
-    This function is by Ben Hamner and taken from https://github.com/benhamner/Metrics/blob/master/Python/ml_metrics/auc.py
-
-    Computes the tied rank of elements in x.
-
-    This function computes the tied rank of elements in x.
 
     Parameters
     ----------
@@ -62,12 +57,6 @@ def tied_rank(x):
 
 def auc(actual, posterior):
     """
-    This function is by Ben Hamner and taken from https://github.com/benhamner/Metrics/blob/master/Python/ml_metrics/auc.py
-    
-    Computes the area under the receiver-operater characteristic (AUC)
-
-    This function computes the AUC error metric for binary classification.
-
     Parameters
     ----------
     actual : list of binary numbers, numpy array
@@ -108,9 +97,6 @@ def normalize10day(stocks):
             return stocks[:,i] / stocks[:,0]
     n = stocks.shape[0]
     stocks_dat =  np.array([ process_column(i) for i in range(46)]).transpose()
-    #stocks_movingavgO9O10 = np.array([int(i > j) for i,j in zip(stocks_dat[:,45], stocks_dat[:,40])]).reshape((n, 1))
-    #stocks_movingavgC9O10 = np.array([int(i > j) for i,j in zip(stocks_dat[:,45], stocks_dat[:,43])]).reshape((n, 1))
-    #return np.hstack((stocks_dat, stocks_movingavgO9O10, stocks_movingavgC9O10))
     return stocks_dat
     
 
